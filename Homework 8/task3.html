@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>List</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: disc;
+            text-align: left;
+            margin-top: 0;
+            padding: 0;
+            margin-left: 25%;
+        }
+
+        li {
+            font-size: 18px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>T0-DO Weekly List:</h1>
+    <p>Enter any item and it will be added to the list.</p>
+    <input type="text" id="itemInput" placeholder="Ex., Stand-up call at 10:00 am" />
+    <button id="addItemButton">OK</button>
+    <ul id="itemList"></ul>
+
+    <script>
+        function addItem() {
+            const itemInput = document.getElementById("itemInput");
+            const itemValue = itemInput.value.trim();
+            const itemList = document.getElementById("itemList");
+
+            if (itemValue !== "") {
+
+                const newItem = document.createElement("li");
+                newItem.textContent = itemValue;
+
+                itemList.appendChild(newItem);
+
+                itemInput.value = "";
+            } else {
+                alert("Not possible to add empty field. Please add any text before submit.");
+            }
+        }
+        document.getElementById("addItemButton").addEventListener("click", addItem);
+    </script>
+</body>
+
+</html>

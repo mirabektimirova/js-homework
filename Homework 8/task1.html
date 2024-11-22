@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simpl html page</title>
+</head>
+
+<body>
+    <h1>What do you want?</h1>
+    <p>Choose any option below by clicking on button:</p>
+    <button id="openWindow">Open Empty Window</button>
+    <button id="showURL">Display Current URL</button>
+    <button id="showScreenSize">Display Screen Dimensions</button>
+
+    <script>
+
+        function openNewWindow() {
+            window.open("", "NewWindow", "width=400,height=400");
+        }
+
+        function showCurrentURL() {
+            alert(`Current URL: ${window.location.href}`);
+        }
+
+        function showScreenDimensions() {
+            const screenWidth = window.screen.width;
+            const screenHeight = window.screen.height;
+            alert(`Screen Dimensions: Width = ${screenWidth}px, Height = ${screenHeight}px`);
+        }
+
+        document.getElementById("openWindow").addEventListener("click", openNewWindow);
+        document.getElementById("showURL").addEventListener("click", showCurrentURL);
+        document.getElementById("showScreenSize").addEventListener("click", showScreenDimensions);
+    </script>
+</body>
+
+</html>
